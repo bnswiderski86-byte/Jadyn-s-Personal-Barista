@@ -84,6 +84,12 @@ body.modal-open {
   font-style: italic;
 }
 
+.app-hint {
+  margin: 4px 0 0;
+  font-size: 0.72rem;
+  color: var(--coffee-light);
+}
+
 /* ---------------- Tabs ---------------- */
 
 .tabs {
@@ -339,4 +345,11 @@ body.modal-open {
   background: rgba(201, 138, 75, 0.15);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--caramel);
+}
+
+.size-note {
+  margin: 16px 2px 0;
+  font-size: 0.76rem;
+  color: var(--coffee-light);
+  text-align: center;
 }
