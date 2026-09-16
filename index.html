@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Jadyn's Personal Barista</title>
+
+<!-- PWA manifest (enables "Add to Home Screen" as a standalone app) -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2b1a11">
+
+<!-- iOS-specific standalone-app behavior -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Barista">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+
+<link rel="icon" href="icons/icon-32.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="app-header">
+    <img src="icons/icon-192.png" alt="" class="cup-icon">
+    <div>
+      <h1 class="app-title">Jadyn's Personal Barista</h1>
+      <p class="app-subtitle">Coffee from a coffee shop? Girrrrl, in this economy? 😭</p>
+      <p class="app-hint">tap a drink below to pull up the recipe</p>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" type="button" data-category="hot">HOT</button>
+    <button class="tab" type="button" data-category="iced">ICED</button>
+  </nav>
+
+  <div class="list-wrap">
+    <div id="drink-list"></div>
+  </div>
+
+  <footer class="app-footer">
+    Recipes sized for a 16 oz cup &middot; adjust to taste
+  </footer>
+
+</div>
+
+<!-- Recipe modal -->
+<div id="modal-overlay"></div>
+<div id="recipe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-handle"></div>
+  <button id="modal-close" aria-label="Close">&times;</button>
+  <h2 id="modal-title"></h2>
+  <p id="modal-tag"></p>
+
+  <div class="size-select" id="size-select">
+    <button type="button" class="size-btn" data-size="12">12 oz</button>
+    <button type="button" class="size-btn active" data-size="16">16 oz</button>
+    <button type="button" class="size-btn" data-size="20">20 oz</button>
+  </div>
+  <p class="size-caption">Syrups and milk scale with size &mdash; espresso stays the same.</p>
+
+  <div class="modal-section-head">Ingredients</div>
+  <div id="modal-ingredients"></div>
+
+  <div class="modal-section-head">Steps</div>
+  <ol id="modal-steps"></ol>
+
+  <p id="modal-notes"></p>
+</div>
+
+<!-- iOS install hint -->
+<div id="install-hint">
+  <button id="install-hint-close" aria-label="Dismiss">&times;</button>
+  <strong>Install this app</strong>
+  Tap the Share icon below, then "Add to Home Screen" &mdash; it'll open full-screen like a real app.
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
